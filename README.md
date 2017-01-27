@@ -1,7 +1,7 @@
 # python-progress-bar
 Simple progress bar for python.
 
-```Example usage:
+```python
 import time
 import progressBar
 startTime = time.time()
