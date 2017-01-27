@@ -1,8 +1,9 @@
+import sys
 def printProgress(step=0, totalSteps=0, seconds=None, barWidth=20):
     progress = float(step)/float(totalSteps)
     percent = int(round(progress*100))
     if seconds is None:
-        print ("[" + ("-"*nHashes) + (" "*(barWidth-nHashes)) + "] " + str(percent) + "%\r")
+        print ("[" + ("-"*nHashes) + (" "*(barWidth-nHashes)) + "] " + str(percent) + "%\r"),
     else:
         secondsLeft = (seconds/step) * (totalSteps-step)
         m, s = divmod(secondsLeft, 60)
@@ -11,4 +12,5 @@ def printProgress(step=0, totalSteps=0, seconds=None, barWidth=20):
         m = int(m)
         h = int(h)
         nHashes = int(round(barWidth*progress))
-        print ("[" + ("-"*nHashes) + (" "*(barWidth-nHashes)) + "] " + str(percent) + "%, ETA = " + str(h) + ":" + str(m) + ":" + str(s) + "\r")
+        print ("[" + ("-"*nHashes) + (" "*(barWidth-nHashes)) + "] " + str(percent) + "%, ETA = " + str(h) + ":" + str(m) + ":" + str(s) + "\r"),
+    sys.stdout.flush()
